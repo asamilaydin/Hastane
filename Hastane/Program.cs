@@ -5,6 +5,7 @@ using Hastane.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))); // PostgreSQL bağlantı dizesini buraya ekleyin
@@ -26,7 +27,7 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -38,7 +39,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages();
+//app.MapRazorPages();
 
 app.Run();
 

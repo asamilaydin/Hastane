@@ -11,7 +11,7 @@
     "Hastane": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7220;http://localhost:5194",
+      "applicationUrl": "http://localhost:36935",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -57,7 +57,7 @@ namespace Hastane.Controllers
                     List<Claim> claims = new List<Claim>();
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserID.ToString()));
                     claims.Add(new Claim(ClaimTypes.Name, user.Name ?? string.Empty));
-
+                    claims.Add(new Claim(ClaimTypes.Role, user.Role));
                     claims.Add(new Claim("Username", user.Username));
 
                     ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

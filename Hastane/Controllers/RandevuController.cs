@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Hastane.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,8 @@ namespace Hastane.Controllers
         
         public IActionResult RandevuAl()
         {
+         
+
             return View();
         }
         public IActionResult Randevularım()

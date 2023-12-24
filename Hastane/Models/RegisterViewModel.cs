@@ -5,16 +5,16 @@ namespace Hastane.Models
     public class RegisterViewModel
 {
 
-     [Required(ErrorMessage = "Ad is required.")]
-     [StringLength(30, ErrorMessage = "Ad can be max 30 characters.")]
-     public string Name { get; set; }
+        [Required(ErrorMessage = "Ad is required.")]
+        [StringLength(30, ErrorMessage = "Ad can be max 30 characters.")]
+        public string Name { get; set; }
 
-    [Required(ErrorMessage = "Ad is required.")]
-     [StringLength(30, ErrorMessage = "Ad can be max 30 characters.")]
-     public string Surname { get; set; }
+        [Required(ErrorMessage = "Ad is required.")]
+        [StringLength(30, ErrorMessage = "Ad can be max 30 characters.")]
+        public string Surname { get; set; }
 
 
-    [Required(ErrorMessage = "Username is required.")]
+        [Required(ErrorMessage = "Username is required.")]
     [StringLength(30, ErrorMessage = "Username can be max 30 characters.")]
     public string Username { get; set; }
 

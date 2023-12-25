@@ -1,0 +1,16 @@
+﻿@model Hastane.Models.PoliklinikViewModel
+
+<form asp-action="PoliklinikEkle" method="post">
+    <div class="form-group">
+        <label>Ana Bilim Dalı</label>
+        <select asp-for="AnaBilimDaliId" asp-items="Model.AnaBilimDallari" class="form-control">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Poliklinik Adı</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Poliklinik Ekle</button>
+</form>

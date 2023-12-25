@@ -1,5 +1,6 @@
 ﻿@model AnaBilimDaliViewModel
 
+
 <form asp-action="AnaBilimDali" method="post">
     <div class="form-group">
         <label asp-for="Name">Ana Bilim Dalı Adı</label>
@@ -9,4 +10,12 @@
     <!-- Diğer AnaBilimDalı bilgileri alanları eklenebilir -->
     <button type="submit" class="btn btn-primary">Ana Bilim Dalı Ekle</button>
 </form>
-@Html.Partial("_PoliklinikEkle")
+<h2>Anabilim Dalları</h2>
+<ul>
+    @foreach (var anabilimDali in Model.AnaBilimDallari)
+    {
+        <li>@anabilimDali.Name</li>
+        <!-- Ad, Anabilim Dali modelinizdeki isim property'sine göre -->
+    }
+</ul>
+

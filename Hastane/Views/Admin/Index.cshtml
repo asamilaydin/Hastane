@@ -1,0 +1,24 @@
+﻿@using Hastane.Entities
+@model List<AnaBilimDali>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ana Bilim Dalları</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach(var x in Model)
+        {
+    <tr>
+        <td>@x.Name</td>
+        <td><a href="/Admin/AnaBilimDaliSil/@x.Id" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Admin/AnaBilimDaliGetir/@x.Id" class="btn btn-success">Güncelle</a></td>
+
+    </tr>
+        }
+</table>
+<td><a href="/Admin/YeniAnaBilimDali" class="btn btn-primary">Yeni Departman</a></td>

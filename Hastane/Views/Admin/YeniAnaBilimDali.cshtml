@@ -1,0 +1,13 @@
+﻿@model Hastane.Entities.AnaBilimDali
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<form class="form-group" method="post">
+    <b>Ana Bilim Dalı</b>
+    @Html.TextBoxFor(x=>x.Name, new {@class = "form-control",required="Bu Alan Boş Bırakılamaz"})
+<br />
+    <button class="btn btn-info">Ekle</button>
+
+</form>

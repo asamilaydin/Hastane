@@ -1,0 +1,19 @@
+﻿@model Hastane.Entities.Doktor
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("DoktorGuncelle", "Admin", FormMethod.Post))
+{
+
+    <b>Doktor ID</b>
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    <b>Doktor</b>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+
+
+}

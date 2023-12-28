@@ -1,0 +1,18 @@
+﻿@model Hastane.Entities.Poliklinik
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("PoliklinikGuncelle", "Admin", FormMethod.Post))
+{
+
+    <b>Poliklinik</b>
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+
+
+}

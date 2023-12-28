@@ -16,11 +16,11 @@
     {
         <tr>
             <td>@x.Name</td>
-            <td>@x.AnaBilimDali.Name.</td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+            <td>@x.AnaBilimDali.Name</td>
+            <td><a href="/Admin/PoliklinikSil/@x.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/PoliklinikGetir/@x.Id" class="btn btn-success">Güncelle</a></td>
 
         </tr>
     }
 </table>
-<td><a href="#" class="btn btn-primary">Yeni Departman</a></td>
+<td><a href="/Admin/YeniPoliklinik" class="btn btn-primary">Yeni Poliklinik</a></td>

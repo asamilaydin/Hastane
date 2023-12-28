@@ -29,8 +29,6 @@
                         @if (User.Identity.IsAuthenticated)
                         {
 
-
-
                             @if (User.IsInRole("user"))
                             {
                                 <li class="nav-item ms-auto">
@@ -48,15 +46,13 @@
                             else
                             {
                                 <li class="nav-item ms-auto">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Yonetici" asp-action="Index"><i class="fa-solid fa-right-from-bracket me-2"></i>Yönetici Paneli</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index"><i class="fa-solid fa-right-from-bracket me-2"></i>Yönetici Paneli</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Hesap" asp-action="Logout"><i class="fa-solid fa-right-from-bracket me-2"></i>Çıkış Yap</a>
                                 </li>
-                                <li class="nav-item ms-auto">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Yonetici" asp-action="AnaBilimDali"><i class="fa-solid fa-right-from-bracket me-2"></i>Ana ekle</a>
-                                </li>
                             }
+
 
                         }
                         else

@@ -1,0 +1,40 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+    <title>Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Hastane.styles.css" asp-append-version="true" />
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">İşlemler</h3>
+        <a href="/Admin/index" class="w3-bar-item w3-button">Ana Bilim Dalları</a>
+        <a href="/Admin/PoliklinikIndex" class="w3-bar-item w3-button">Poliklinikler</a>
+        <a href="/Admin/DoktorIndex" class="w3-bar-item w3-button">Doktorlar</a>
+        <a href="#" class="w3-bar-item w3-button">Kullanıcılar</a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+
+        <div class="w3-container w3-teal">
+            <h1>MedLife</h1>
+        </div>
+
+
+
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+    
+</html>

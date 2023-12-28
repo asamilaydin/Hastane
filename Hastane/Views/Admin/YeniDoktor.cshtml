@@ -1,0 +1,17 @@
+﻿@model Hastane.Entities.Doktor
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<form class="form-group" method="post">
+    <b>Doktor</b>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    <b>Bağlı Olduğu Poliklinik</b>
+    @Html.DropDownListFor(x => x.poliklinik.Id, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    <button class="btn btn-info">Ekle</button>
+
+</form>
+

@@ -80,6 +80,117 @@ namespace Hastane.Controllers
             return View(poliklinikler);
         } 
 
+        public IActionResult YeniPoliklinik()
+        {
+
+            List<SelectListItem> dallar = (from x in _databaseContext.AnaBilimDallari.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.Id.ToString()
+                                           }).ToList();
+            ViewBag.dgr = dallar;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult YeniPoliklinik(Poliklinik p)
+        {
+            var existingPoliklinik = _databaseContext.Poliklinikler.FirstOrDefault(x => x.Name == p.Name);
+
+            if (existingPoliklinik != null)
+            {
+                var mesaj = "Poliklinik Zaten Kayıtlı";
+                ViewBag.deger = mesaj;
+                return RedirectToAction("PoliklinikIndex");
+            }
+            var pol = _databaseContext.AnaBilimDallari.Where(x => x.Id == p.AnaBilimDali.Id).FirstOrDefault();
+            p.AnaBilimDali = pol;
+            _databaseContext.Add(p);
+            _databaseContext.SaveChanges();
+
+            return RedirectToAction("PoliklinikIndex");
+        }
+        public IActionResult PoliklinikSil(Guid id)
+        {
+            var silinecek = _databaseContext.Poliklinikler.FirstOrDefault(abd => abd.Id ==id);
+            if (silinecek != null)
+            {
+                _databaseContext.Poliklinikler.Remove(silinecek);
+                _databaseContext.SaveChanges();
+            }
+            return RedirectToAction("PoliklinikIndex");
+        }
+
+        public IActionResult PoliklinikGetir(Guid id)
+        {
+            var pol = _databaseContext.Poliklinikler.FirstOrDefault(pol => pol.Id == id);
+
+            return View(pol);
+        }
+
+        public IActionResult PoliklinikGuncelle(Poliklinik pol)
+        {
+            var poliklinik_1 = _databaseContext.Poliklinikler.FirstOrDefault(abd => abd.Id == pol.Id);
+
+            poliklinik_1.Name = pol.Name;
+            _databaseContext.SaveChanges();
+            return RedirectToAction("PoliklinikIndex");
+        }
+        public IActionResult DoktorIndex()
+        {
+            var doktorlar = _databaseContext.Doktorlar.Include(x => x.poliklinik).ToList();
+            return View(doktorlar);
+        }
+        public IActionResult YeniDoktor()
+        {
+
+            List<SelectListItem> Pol = (from x in _databaseContext.Poliklinikler.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.Id.ToString()
+                                           }).ToList();
+            ViewBag.dgr = Pol;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult YeniDoktor(Doktor d)
+        {
+
+            var doc = _databaseContext.Poliklinikler.Where(x => x.Id == d.poliklinik.Id).FirstOrDefault();
+            d.poliklinik = doc;
+            _databaseContext.Add(d);
+            _databaseContext.SaveChanges();
+
+            return RedirectToAction("DoktorIndex");
+        }
+
+        public IActionResult DoktorSil(Guid id)
+        {
+            var silinecek = _databaseContext.Doktorlar.FirstOrDefault(doc => doc.Id == id);
+            if (silinecek != null)
+            {
+                _databaseContext.Doktorlar.Remove(silinecek);
+                _databaseContext.SaveChanges();
+            }
+            return RedirectToAction("DoktorIndex");
+        }
+
+        public IActionResult DoktorGetir(Guid id)
+        {
+            var doc = _databaseContext.Doktorlar.FirstOrDefault(doc => doc.Id == id);
+
+            return View(doc);
+        }
+        public IActionResult DoktorGuncelle(Doktor doc)
+        {
+            var docc = _databaseContext.Doktorlar.FirstOrDefault(abd => abd.Id == doc.Id);
+
+            docc.Name = doc.Name;
+            _databaseContext.SaveChanges();
+            return RedirectToAction("DoktorIndex");
+        }
+
     }
 }
 

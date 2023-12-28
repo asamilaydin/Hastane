@@ -1,5 +1,5 @@
 ﻿using System;
-using Hastane.Data;
+
 using Hastane.Models;
 using Microsoft.AspNetCore.Mvc;
 using NETCore.Encrypt.Extensions;
@@ -66,7 +66,10 @@ namespace Hastane.Controllers
 
                     HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                    return RedirectToAction("Index", "Home");
+                 
+                        return RedirectToAction("Index", "Home");
+                    
+                   
                 }
                 else
                 {

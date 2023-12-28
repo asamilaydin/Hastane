@@ -16,7 +16,7 @@ namespace Hastane.Controllers
         
         public IActionResult RandevuAl()
         {
-         
+        
 
             return View();
         }

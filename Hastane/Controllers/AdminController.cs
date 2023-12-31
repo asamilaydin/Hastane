@@ -76,9 +76,9 @@ namespace Hastane.Controllers
 
         public IActionResult PoliklinikIndex()
         {
-            var poliklinikler = _databaseContext.Poliklinikler.Include(x=>x.AnaBilimDali).ToList();
+            var poliklinikler = _databaseContext.Poliklinikler.Include(x => x.AnaBilimDali).ToList();
             return View(poliklinikler);
-        } 
+        }
 
         public IActionResult YeniPoliklinik()
         {
@@ -189,6 +189,35 @@ namespace Hastane.Controllers
             docc.Name = doc.Name;
             _databaseContext.SaveChanges();
             return RedirectToAction("DoktorIndex");
+        }
+
+        public IActionResult KullaniciIndex()
+        {
+            var kullanicilar = _databaseContext.Users.ToList();
+            return View(kullanicilar);
+        }
+        public IActionResult KullaniciSil(Guid id)
+        {
+            var silinecek = _databaseContext.Users.FirstOrDefault(abd => abd.UserID == id);
+
+            _databaseContext.Users.Remove(silinecek);
+            _databaseContext.SaveChanges();
+            return RedirectToAction("KullaniciIndex");
+        }
+        public IActionResult KullaniciGetir(Guid id)
+        {
+            var usr = _databaseContext.Users.FirstOrDefault(abd => abd.UserID == id);
+
+            return View(usr);
+        }
+        public IActionResult KullaniciGuncelle(User user)
+        {
+            var usr = _databaseContext.Users.FirstOrDefault(abd => abd.UserID == user.UserID);
+
+            usr.Name = user.Name;
+            usr.Surname = user.Surname;
+            _databaseContext.SaveChanges();
+            return RedirectToAction("KullaniciIndex");
         }
 
     }

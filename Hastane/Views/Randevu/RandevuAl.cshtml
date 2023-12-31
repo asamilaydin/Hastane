@@ -1,1 +1,140 @@
-﻿
+﻿@model RandevuAlViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DropDownList Mevzusu</title>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <h2>Drop Down Sample</h2>
+            <hr />
+
+            @* POST işlemi için BeginForm metodu ile Form elementi oluşturmayı unutmuyoruz.. *@
+            @using (Html.BeginForm())
+            {
+                <div class="col-md-12">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Ana Bilim Dalı :</label>
+                            <div class="col-md-5">
+                                @Html.DropDownListFor(m => m.SelectedAnaBilimDaliId, Model.AnaBilimDallari, "Lütfen Seçiniz", new { @class = "dropdown form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Poliklinik :</label>
+                            <div class="col-md-5">
+                                @Html.DropDownListFor(m => m.SelectedPoliklinikId, Model.Poliklinikler, "Lütfen Seçiniz", new { @class = "dropdown form-control" })
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Doktor :</label>
+                            <div class="col-md-5">
+                                @Html.DropDownListFor(m => m.SelectedDoktorId, Model.Doktorlar, "Lütfen Seçiniz", new { @class = "dropdown form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Randevu Tarihi :</label>
+                            <div class="col-md-5">
+                                <input asp-for="RandevuTarihi" type="date" class="form-control" />
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label class="control-label col-md-2">User ID :</label>
+                            <div class="col-md-5">
+                                <input asp-for="UserId" type="text" class="form-control" />
+                            </div>
+                        </div>*@
+
+                        <hr />
+                        <div class="col-md-7 text-right">
+                            <button type="submit" class="btn btn-success">Gönder</button>
+                            <hr />
+                            
+
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+            <script>
+                $("#SelectedAnaBilimDaliId").change(function () {
+                    var ddlCountry = $(this);
+                    var countryId = ddlCountry.val();
+                    if (countryId != "") {
+
+                        $.ajax({
+                            method: "GET",
+                            url: '@Url.Action("GetCitiesByCountry","Randevu")' + '/' + countryId,
+                            beforeSend: function () {
+                                // ajax isteği öncesi şehirler silinir.
+                                $("#SelectedPoliklinikId option").not(":first").remove();
+                            }
+                        }).done(function (result) {
+                            console.log(result);
+
+                             // json formatında ülkeye ait şehirler gelir..
+                            // her biri için option elementi oluşturulur
+                            // şehirler(id=SelectedCityId) dropdownlist e eklenir.
+                            for (var i = 0; i < result.length; i++) {
+                                var city = result[i];
+
+                                var opt = $("<option></option>");
+                                opt.val(city.id);
+                                opt.text(city.name);
+                                $("#SelectedPoliklinikId").append(opt);
+                            }
+                        });
+                    } else {
+                        $("#SelectedPoliklinikId option").not(":first").remove();
+                    }
+                });
+            </script>
+            <script>
+                $("#SelectedPoliklinikId").change(function () {
+                    var ddlCountry = $(this);
+                    var countryId = ddlCountry.val();
+                    if (countryId != "") {
+
+                        $.ajax({
+                            method: "GET",
+                            url: '@Url.Action("GetCitiesByCountr","Randevu")' + '/' + countryId,
+                            beforeSend: function () {
+                                // ajax isteği öncesi şehirler silinir.
+                                $("#SelectedDoktorId option").not(":first").remove();
+                            }
+                        }).done(function (result) {
+                            console.log(result);
+
+                             // json formatında ülkeye ait şehirler gelir..
+                            // her biri için option elementi oluşturulur
+                            // şehirler(id=SelectedCityId) dropdownlist e eklenir.
+                            for (var i = 0; i < result.length; i++) {
+                                var city = result[i];
+
+                                var opt = $("<option></option>");
+                                opt.val(city.id);
+                                opt.text(city.name);
+                                $("#SelectedDoktorId").append(opt);
+                            }
+                        });
+                    } else {
+                        $("#SelectedDoktorId option").not(":first").remove();
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+﻿@model Hastane.Entities.User
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("KullaniciGuncelle", "Admin", FormMethod.Post))
+{
+
+    <b>Kullanıcı</b>
+    @Html.TextBoxFor(x => x.UserID, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", required = "Bu Alan Boş Bırakılamaz" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+
+
+}

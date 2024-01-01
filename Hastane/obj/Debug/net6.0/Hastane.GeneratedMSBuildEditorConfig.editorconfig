@@ -12,7 +12,7 @@ build_property.RootNamespace = Hastane
 build_property.ProjectDir = /Users/ahmet/Desktop/Hastane/Hastane/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = /Users/ahmet/Desktop/Hastane/Hastane
 build_property._RazorSourceGeneratorDebug = 
 
@@ -20,8 +20,52 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ahmet/Desktop/Hastane/Hastane/Views/Hesap/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVzYXAvSW5kZXguY3NodG1s
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/AnaBilimDaliGetir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQW5hQmlsaW1EYWxpR2V0aXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/DoktorGetir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRG9rdG9yR2V0aXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/DoktorIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRG9rdG9ySW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/KullaniciGetir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vS3VsbGFuaWNpR2V0aXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/KullaniciIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vS3VsbGFuaWNpSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/PoliklinikGetir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUG9saWtsaW5pa0dldGlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/PoliklinikIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUG9saWtsaW5pa0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/RandevuIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUmFuZGV2dUluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/YeniAnaBilimDali.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vWWVuaUFuYUJpbGltRGFsaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/YeniDoktor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vWWVuaURva3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Admin/YeniPoliklinik.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vWWVuaVBvbGlrbGluaWsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahmet/Desktop/Hastane/Hastane/Views/Hesap/Login.cshtml]
@@ -32,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVzYXAvUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Home/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahmet/Desktop/Hastane/Hastane/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,8 +88,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Randevu/RandevuAl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmFuZGV2dS9SYW5kZXZ1QWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Randevu/Randevularım.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmFuZGV2dS9SYW5kZXZ1bGFyxLFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahmet/Desktop/Hastane/Hastane/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/Hastane/Hastane/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahmet/Desktop/Hastane/Hastane/Views/Shared/_LoginPartial.cshtml]

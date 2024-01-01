@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/Hastane.bundle.scp.css"
     },
     {
+      "Id": "/Users/ahmet/Desktop/Hastane/Hastane/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/ahmet/Desktop/Hastane/Hastane/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

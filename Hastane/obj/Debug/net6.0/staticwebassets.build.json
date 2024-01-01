@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "atJZ8GK6G6xn4IU8f3K4y4mzDfLaaJgcvVg4KNo7Dok=",
+  "Hash": "UWlIrHKQ9NVsw1XH4itFLR9AETkK3KlAcT0eHlMPVSE=",
   "Source": "Hastane",
   "BasePath": "_content/Hastane",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/ahmet/Desktop/Hastane/Hastane/obj/Debug/net6.0/scopedcss/projectbundle/Hastane.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/ahmet/Desktop/Hastane/Hastane/wwwroot/.DS_Store",
+      "SourceId": "Hastane",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahmet/Desktop/Hastane/Hastane/wwwroot/",
+      "BasePath": "_content/Hastane",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
     },
     {
       "Identity": "/Users/ahmet/Desktop/Hastane/Hastane/wwwroot/css/site.css",

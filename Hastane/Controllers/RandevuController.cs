@@ -88,7 +88,37 @@ namespace Hastane.Controllers
 
         public IActionResult Randevularım()
             {
-                return View();
+            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+           
+
+            var userAppointments = _databaseContext.Randevular
+            .Where(r => r.UserId == userId) // Kullanıcıya ait randevuları filtrele
+            .Select(r => new RandevularımViewModel
+            {
+                Id = r.Id,
+                AnabilimdaliName = _databaseContext.AnaBilimDallari.FirstOrDefault(a => a.Id == r.AnaBilimDaliId).Name,
+                DoktorName = _databaseContext.Doktorlar.FirstOrDefault(d => d.Id == r.DoktorId).Name,
+                PoliklinikName = _databaseContext.Poliklinikler.FirstOrDefault(p => p.Id == r.PoliklinikId).Name,
+                RandevuDate = r.RandevuTarihi
+                
+                
+            })
+            .ToList();
+
+
+            return View(userAppointments);
             }
-        }
+          public IActionResult RandevuSil(Guid id)
+         {
+            
+            var silinecek = _databaseContext.Randevular.FirstOrDefault(abd => abd.Id == id);
+
+            _databaseContext.Randevular.Remove(silinecek);
+            _databaseContext.SaveChanges();
+            return RedirectToAction("Randevularım");
+            
+         }
+
     }
+
+}

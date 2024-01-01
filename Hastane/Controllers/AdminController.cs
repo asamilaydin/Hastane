@@ -220,6 +220,34 @@ namespace Hastane.Controllers
             return RedirectToAction("KullaniciIndex");
         }
 
+        public IActionResult RandevuIndex()
+        {
+            var userAppointments = _databaseContext.Randevular
+            .Select(r => new RandevularımViewModel
+            {
+                Id = r.Id,
+                AnabilimdaliName = _databaseContext.AnaBilimDallari.FirstOrDefault(a => a.Id == r.AnaBilimDaliId).Name,
+                DoktorName = _databaseContext.Doktorlar.FirstOrDefault(d => d.Id == r.DoktorId).Name,
+                PoliklinikName = _databaseContext.Poliklinikler.FirstOrDefault(p => p.Id == r.PoliklinikId).Name,
+                RandevuDate = r.RandevuTarihi
+
+
+            })
+            .ToList();
+            return View(userAppointments);
+
+
+        }
+        public IActionResult RandevuSil(Guid id)
+        {
+
+            var silinecek = _databaseContext.Randevular.FirstOrDefault(abd => abd.Id == id);
+
+            _databaseContext.Randevular.Remove(silinecek);
+            _databaseContext.SaveChanges();
+            return RedirectToAction("RandevuIndex");
+
+        }
     }
 }
 

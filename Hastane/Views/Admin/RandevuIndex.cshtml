@@ -1,9 +1,11 @@
-﻿
-@model List<RandevularımViewModel>
+﻿@model List<RandevularımViewModel>
 
 @{
-    ViewData["Title"] = "Randevularım";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+
+
+
 
 <table class="table table-bordered">
     <tr>
@@ -12,7 +14,7 @@
         <th>Doktor</th>
         <th>Tarih</th>
         <th>Sil</th>
-        
+
 
     </tr>
     @foreach (var x in Model)
@@ -22,8 +24,8 @@
             <td>@x.PoliklinikName</td>
             <td>@x.DoktorName</td>
             <td>@x.RandevuDate</td>
-            <td><a href="/Randevu/RandevuSil/@x.Id" class="btn btn-danger">Sil</a></td>
-            
+            <td><a href="/Admin/RandevuSil/@x.Id" class="btn btn-danger">Sil</a></td>
+
 
         </tr>
     }

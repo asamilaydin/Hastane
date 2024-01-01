@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
 
-            <h2>Drop Down Sample</h2>
+            <h2>Randevu Al</h2>
             <hr />
 
             @* POST işlemi için BeginForm metodu ile Form elementi oluşturmayı unutmuyoruz.. *@
@@ -24,13 +24,13 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Ana Bilim Dalı :</label>
                             <div class="col-md-5">
-                                @Html.DropDownListFor(m => m.SelectedAnaBilimDaliId, Model.AnaBilimDallari, "Lütfen Seçiniz", new { @class = "dropdown form-control" })
+                                @Html.DropDownListFor(m => m.SelectedAnaBilimDaliId, Model.AnaBilimDallari, "Lütfen Seçiniz", new { @class = "dropdown form-control", required = "Bu Alan Boş Bırakılamaz" })
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-2">Poliklinik :</label>
                             <div class="col-md-5">
-                                @Html.DropDownListFor(m => m.SelectedPoliklinikId, Model.Poliklinikler, "Lütfen Seçiniz", new { @class = "dropdown form-control" })
+                                @Html.DropDownListFor(m => m.SelectedPoliklinikId, Model.Poliklinikler, "Lütfen Seçiniz", new { @class = "dropdown form-control", required = "Bu Alan Boş Bırakılamaz" })
                             </div>
 
                         </div>
@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Doktor :</label>
                             <div class="col-md-5">
-                                @Html.DropDownListFor(m => m.SelectedDoktorId, Model.Doktorlar, "Lütfen Seçiniz", new { @class = "dropdown form-control" })
+                                @Html.DropDownListFor(m => m.SelectedDoktorId, Model.Doktorlar, "Lütfen Seçiniz", new { @class = "dropdown form-control", required = "Bu Alan Boş Bırakılamaz" })
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
 
                         <hr />
                         <div class="col-md-7 text-right">
-                            <button type="submit" class="btn btn-success">Gönder</button>
+                            <button type="submit" class="btn btn-success">Randevu Al</button>
                             <hr />
                             
 

@@ -9,6 +9,12 @@
 
   <ItemGroup>
     <None Remove="Views\Hesap\" />
+    <None Remove="Views\Randevu\" />
+    <None Remove="Views\Admin\" />
+    <None Remove="Services\" />
+    <None Remove="Resources\" />
+    <None Remove="Resources\SharedResources.en-US" />
+    <None Remove="Resources\SharedResources.tr-TR" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -23,9 +29,34 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.23" />
     <PackageReference Include="NETCore.Encrypt" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Runtime" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.23" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\Hesap\" />
+    <Folder Include="Views\Randevu\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Services\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\SharedResources.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResources.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\SharedResources.tr-TR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResources.tr-TR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\SharedResources.en-US.Designer.cs">
+      <DependentUpon>SharedResources.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\SharedResources.tr-TR.Designer.cs">
+      <DependentUpon>SharedResources.tr-TR.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

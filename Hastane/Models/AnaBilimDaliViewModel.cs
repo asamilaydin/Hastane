@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Hastane.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Hastane.Models
@@ -8,8 +9,9 @@ namespace Hastane.Models
     {
         [Required]
         public string Name { get; set; }
-        public List<SelectListItem> AnaBilimDallari { get; set; }
-        public int SelectedAnaBilimDaliId { get; set; }
+        [Required]
+        public Guid Id { get; set; }
+
 
     }
 }

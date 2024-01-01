@@ -14,6 +14,7 @@ namespace Hastane.Entities
         public string Name { get; set; }
 
         public virtual ICollection<Poliklinik> Poliklinikler { get; set; }
+        public virtual ICollection<Randevu> Randevular { get; set; }
 
     }
 

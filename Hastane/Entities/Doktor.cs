@@ -16,6 +16,7 @@ namespace Hastane.Entities
         [ForeignKey("Poliklinik")]
         public Guid PoliklinikId { get; set; }
         // Diğer özellikler
+        public Poliklinik poliklinik { get; set; }
 
         public virtual ICollection<CalısmaSaat> CalısmaSaatleri { get; set; }
         public virtual ICollection<Randevu> Randevular{ get; set; }

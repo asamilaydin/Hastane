@@ -1,12 +1,16 @@
-﻿using Hastane.Data;
+﻿
 using Hastane.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Hastane.Data;
+namespace Hastane.Entities;
 
 public class ApplicationDbContext : DbContext
 {
+    public ApplicationDbContext()
+    {
+    }
+
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
@@ -18,5 +22,6 @@ public class ApplicationDbContext : DbContext
     public DbSet<CalısmaSaat> CalısmaSaatleri { get; set; }
     public DbSet<Randevu> Randevular { get; set; }
 
+   
 }
 

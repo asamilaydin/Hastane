@@ -14,9 +14,11 @@ namespace Hastane.Entities
         public string Name { get; set; }
         [ForeignKey("AnaBilimDali")]
         public Guid AnaBilimDaliId { get; set; }
+        public AnaBilimDali AnaBilimDali { get; set; }
 
 
         public virtual ICollection<Doktor> Doktorlar { get; set; }
+        public virtual ICollection<Randevu> Randevular { get; set; }
     }
 
 }

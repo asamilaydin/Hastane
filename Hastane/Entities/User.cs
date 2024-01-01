@@ -16,7 +16,7 @@ public class User
         [StringLength(50)]
         public string Surname { get; set; }
 
-        [Required]
+    [Required]
     [StringLength(30)]
     public string Username { get; set; }
 
